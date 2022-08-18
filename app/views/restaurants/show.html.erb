@@ -1,10 +1,14 @@
 <h1><%= @restaurant.name %>'s Page</h1>
-<p><%= @restaurant.category %></p>
-<p><%= @restaurant.address %></p>
-<p><%= @restaurant.phone_number %></p>
-
+<h3>Restaurant Details</h3>
+<p>Category: <%= @restaurant.category %></p>
+<p>Address:<%= @restaurant.address %></p>
+<p>Phone Number:<%= @restaurant.phone_number %></p>
+<br><hr><br>
 <h2>Reviews</h2>
-<%= link_to "Add new review", new_restaurant_review_path(@restaurant) %>
+<h3>New Review</h3>
+<%= render 'reviews/revform', restaurant: @restaurant, review: @restaurant.reviews.new %>
+<br><hr><br>
+<h3>See Reviews</h3>
 <ul>
 <% @restaurant.reviews.each do |rev| %>
   <li>

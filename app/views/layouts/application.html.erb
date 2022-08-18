@@ -12,6 +12,16 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="navbar px-3 bg-light border-bottom d-flex align-items-center">
+     <h1 class="m-0">Fake Yelp</h1>
+     <p class="m-0"><%= link_to "Create new resto", new_restaurant_path, class: "text-secondary text-decoration-none" %></p>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col mt-3">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
